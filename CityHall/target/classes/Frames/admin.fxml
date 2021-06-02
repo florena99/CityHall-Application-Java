@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="554.0" prefWidth="696.0" style="-fx-background-color: #85929E;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+   <children>
+      <VBox prefHeight="554.0" prefWidth="224.0" style="-fx-background-color: #273746;">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="149.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/primaris-cluj-napoca.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="usersButton" mnemonicParsing="false" onAction="#usersButtononAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Utilizatori" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="documentsButton" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" onAction="#documentsButtonOnAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Documente" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="requestButton" layoutX="10.0" layoutY="187.0" mnemonicParsing="false" onAction="#requestButtonOnAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Cereri" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitButton" layoutX="10.0" layoutY="279.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Iesire" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <TableView fx:id="usersTable" layoutX="239.0" layoutY="121.0" prefHeight="379.0" prefWidth="450.0">
+        <columns>
+          <TableColumn fx:id="columnId" prefWidth="61.60003662109375" text="ID_USER" />
+          <TableColumn fx:id="columnName" prefWidth="106.39996337890625" text="NAME" />
+            <TableColumn fx:id="columnCNP" prefWidth="71.20001220703125" text="CNP" />
+            <TableColumn fx:id="columnPhone" prefWidth="109.60003662109375" text="PHONE" />
+            <TableColumn fx:id="columnEmail" prefWidth="100.79998779296875" text="EMAIL" />
+        </columns>
+      </TableView>
+      <Label layoutX="254.0" layoutY="52.0" text="Utilizatori:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="356.0" layoutY="52.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="nrofusersLabel" layoutX="348.0" layoutY="52.0" text=" ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="CHILD" layoutX="232.0" layoutY="73.0" size="22.0" wrappingWidth="13.371416091918945" />
+   </children>
+</AnchorPane>

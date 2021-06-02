@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="554.0" prefWidth="696.0" style="-fx-background-color: #85929E;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"  >
+   <children>
+      <VBox prefHeight="554.0" prefWidth="224.0" style="-fx-background-color: #273746;">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="149.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/primaris-cluj-napoca.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="usersButton" mnemonicParsing="false" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Editare Locuinte" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="requestButton" layoutX="10.0" layoutY="187.0" mnemonicParsing="false" onAction="#requestButtonOnAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Cereri" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitButton" layoutX="10.0" layoutY="279.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Iesire" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <TabPane layoutX="224.0" prefHeight="554.0" prefWidth="470.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Adaugare Locuinta">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="58.0" layoutY="73.0" prefHeight="40.0" prefWidth="206.0" text="Adaugare locuinta noua">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView glyphName="HOME" layoutX="273.0" layoutY="103.0" size="30" />
+                        <TextField fx:id="addressTextField" layoutX="118.0" layoutY="208.0" prefHeight="26.0" prefWidth="206.0" />
+                        <Label layoutX="58.0" layoutY="211.0" text="Adresa :">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="73.0" layoutY="279.0" text="Oras:">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cityTextField" layoutX="118.0" layoutY="276.0" prefHeight="26.0" prefWidth="206.0" />
+                        <Label layoutX="41.0" layoutY="346.0" prefHeight="19.0" prefWidth="95.0" text="Cod postal:">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="postcodeTextField" layoutX="118.0" layoutY="343.0" prefHeight="26.0" prefWidth="206.0" />
+                        <Button fx:id="addButton" layoutX="206.0" layoutY="401.0" mnemonicParsing="false" onAction="#addButtonOnAction" text="Adauga" />
+                        <Label layoutX="122.0" layoutY="449.0" prefHeight="18.0" prefWidth="205.0" textFill="RED" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Sterge Locuinta">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="98.0" layoutY="83.0" prefHeight="40.0" prefWidth="206.0" text="Stergere locuinta">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView glyphName="HOME" layoutX="255.0" layoutY="113.0" size="30" />
+                        <TableView fx:id="addressesTable" layoutX="21.0" layoutY="162.0" prefHeight="264.0" prefWidth="414.0">
+                          <columns>
+                            <TableColumn fx:id="idaddress" prefWidth="75.0" text="id_addresa" />
+                            <TableColumn fx:id="address" prefWidth="114.39996337890625" text="adresa" />
+                              <TableColumn fx:id="city" prefWidth="120.0" text="oras" />
+                              <TableColumn fx:id="postcode" prefWidth="105.5999755859375" text="cod postal" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="refreshButton" layoutX="21.0" layoutY="447.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="34.0" prefWidth="72.0" text="Refresh" />
+                        <Button fx:id="deleteButton" layoutX="363.0" layoutY="447.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" prefHeight="34.0" prefWidth="72.0" text="Sterge" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

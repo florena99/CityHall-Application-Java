@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="554.0" prefWidth="696.0" style="-fx-background-color: #85929E;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin2Controller">
+   <children>
+      <VBox prefHeight="554.0" prefWidth="224.0" style="-fx-background-color: #273746;">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="149.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/primaris-cluj-napoca.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="usersButton" mnemonicParsing="false" onAction="#usersButtonOnAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Utilizatori" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="documentsButton" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Documente" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="requestButton" layoutX="10.0" layoutY="187.0" mnemonicParsing="false" onAction="#requestButtonOnAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Cereri" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitButton" layoutX="10.0" layoutY="279.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="92.0" prefWidth="224.0" style="-fx-background-color: #273746;" text="Iesire" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <TabPane layoutX="227.0" prefHeight="554.0" prefWidth="471.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Adaugare Document">
+            <content>
+              <AnchorPane fx:id="adaugare_document" minHeight="0.0" minWidth="0.0" prefHeight="524.0" prefWidth="497.0" style="-fx-background-color: #85929E;">
+                     <children>
+                        <TextField fx:id="docNameTextField" layoutX="61.0" layoutY="112.0" prefHeight="38.0" prefWidth="250.0" promptText="Nume document nou" />
+                        <TextField fx:id="docTypeTextField" layoutX="63.0" layoutY="181.0" prefHeight="38.0" prefWidth="252.0" promptText="Tip document nou" />
+                        <Button fx:id="addButtom" layoutX="231.0" layoutY="256.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="26.0" prefWidth="79.0" text="Adaugare" />
+                        <Label layoutX="65.0" layoutY="49.0" prefHeight="26.0" prefWidth="224.0" text="Adaugare document nou" textFill="#273746">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#273746" glyphName="BOOK" layoutX="270.0" layoutY="71.0" size="25" text="" wrappingWidth="37.54288196563721" />
+                        <Label fx:id="errorName" layoutX="203.0" layoutY="158.0" prefHeight="18.0" prefWidth="111.0" />
+                        <Label fx:id="errorType" layoutX="203.0" layoutY="231.0" prefHeight="18.0" prefWidth="109.0" />
+                        <Label fx:id="errorLabel" layoutX="61.0" layoutY="254.0" prefHeight="30.0" prefWidth="147.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Stergere Document">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="docstableView" layoutX="14.0" layoutY="30.0" prefHeight="200.0" prefWidth="442.0">
+                          <columns>
+                              <TableColumn fx:id="id_doc_col" prefWidth="115.19999694824219" text="ID_DOCUMENT" />
+                            <TableColumn fx:id="name_col" prefWidth="175.20001220703125" text="Nume" />
+                            <TableColumn fx:id="type_col" minWidth="0.0" prefWidth="150.4000244140625" text="TIP" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="refreshButton" layoutX="14.0" layoutY="250.0" mnemonicParsing="false" onAction="#refreshOnAction" prefHeight="51.0" prefWidth="142.0" style="-fx-background-color: #FFF0000;" text="Refresh" />
+                        <Button fx:id="deleteButton" layoutX="309.0" layoutY="250.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="51.0" prefWidth="146.0" style="-fx-background-color: #FFF0000;" text="Delete" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
